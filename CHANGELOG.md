@@ -2,6 +2,23 @@
 
 ---
 
+## v1.4.0 — first fully working native build
+
+### Working
+- Native desktop app launches and runs flawlessly
+- Python server starts automatically on app open
+- Web UI loads inside Electron window with server connected
+- Folder load, Discogs lookup, rename and apply on disk all confirmed working
+- System tray icon displays correctly with Rowroad artwork
+- App persists in tray after window close
+
+### Fixed
+- All server bundling, Unicode, and path resolution issues resolved from v1.3.0
+- `dist/`, `node_modules/`, `python/`, `build_tmp/` correctly excluded from git
+- Submodule correctly pointing to latest web UI (v1.3)
+
+---
+
 ## v1.3.0
 
 ### Fixed
