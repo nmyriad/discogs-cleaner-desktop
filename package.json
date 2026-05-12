@@ -1,0 +1,54 @@
+{
+  "name": "discogs-cleaner",
+  "version": "1.2.0",
+  "description": "Rename music library folders using Discogs metadata",
+  "main": "main.js",
+  "author": "nmyriad",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder build --win",
+    "pack": "electron-builder --dir"
+  },
+  "dependencies": {
+    "electron-updater": "^6.3.9"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.nmyriad.discogs-cleaner",
+    "productName": "discogs-cleaner",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "nmyriad",
+        "repo": "discogs-cleaner"
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "assets/icon.ico",
+      "uninstallerIcon": "assets/icon.ico"
+    },
+    "extraResources": [
+      {
+        "from": "python/",
+        "to": "python/",
+        "filter": ["**/*"]
+      }
+    ],
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/",
+      "assets/"
+    ]
+  }
+}
