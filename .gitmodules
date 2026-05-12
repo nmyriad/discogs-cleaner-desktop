@@ -1,0 +1,3 @@
+[submodule "discogs-cleaner"]
+	path = discogs-cleaner
+	url = https://github.com/nmyriad/discogs-cleaner
