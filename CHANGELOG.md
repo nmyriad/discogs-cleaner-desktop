@@ -2,6 +2,20 @@
 
 ---
 
+## v1.5.3 — quit fix
+
+### Fixed
+- **App not quitting on window close** — closing the window now shows a dialog: minimize to tray or quit. Previously the app would hide silently with no obvious way to exit without Task Manager.
+
+---
+
+## v1.5.2 — stats bar fix
+
+### Fixed
+- **Stats bar now visible in desktop app** — the updated index.html was not being bundled into server.exe correctly. Submodule bumped to v1.6.0 to include the stats bar, lifetime counter, and key caching UI.
+
+---
+
 ## v1.5.0 — stats, key caching, changelog on update
 
 ### New

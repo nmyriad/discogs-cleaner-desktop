@@ -95,7 +95,24 @@ function createWindow() {
     showChangelogIfUpdated();
   });
   mainWindow.on('close', e => {
-    if (!app.isQuitting) { e.preventDefault(); mainWindow.hide(); }
+    if (!app.isQuitting) {
+      e.preventDefault();
+      dialog.showMessageBox(mainWindow, {
+        type: 'question',
+        title: 'discogs-cleaner',
+        message: 'Minimize to tray or quit?',
+        buttons: ['Minimize to tray', 'Quit'],
+        defaultId: 0,
+        cancelId: 0
+      }).then(({ response }) => {
+        if (response === 1) {
+          app.isQuitting = true;
+          app.quit();
+        } else {
+          mainWindow.hide();
+        }
+      });
+    }
   });
   mainWindow.loadURL(SERVER_URL);
 }
