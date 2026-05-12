@@ -2,6 +2,24 @@
 
 ---
 
+## v1.5.0 — stats, key caching, changelog on update
+
+### New
+- **Lifetime + session stats bar** — renames tracked per session and across all sessions
+- **Cached API keys** — saved to `~/.discogs-cleaner/config.json`, auto-loaded on launch
+- **Changelog dialog** — shown automatically after an update with a summary of what changed
+- **Tray improvements** — version shown in tooltip and menu, changelog link in right-click menu
+- **Auto-updater fixed** — correctly checks GitHub releases, surfaces errors gracefully
+
+### From web UI (v1.6.0)
+- Undo last rename batch
+- Title case capitalization
+- Auto-backoff on rate limiting
+- Stamp file written to renamed folders
+- Parser fixes for bracket-dash formats
+
+---
+
 ## v1.4.0 — first fully working native build
 
 ### Working
