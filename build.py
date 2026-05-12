@@ -72,8 +72,9 @@ def main():
 
     # Step 4: Electron build
     print('\n[4/4] Building Electron installer...')
-    run(['npm', 'install'])
-    run(['npm', 'run', 'build'])
+    npm = 'npm.cmd' if sys.platform == 'win32' else 'npm'
+    run([npm, 'install'])
+    run([npm, 'run', 'build'])
 
     installer = None
     if os.path.isdir(DIST_DIR):

@@ -14,14 +14,14 @@ const SERVER_URL = `http://localhost:${SERVER_PORT}`;
 
 function getPythonAndScript() {
   if (app.isPackaged) {
-    // In production: use bundled server.exe from extraResources
     const serverExe = path.join(process.resourcesPath, 'python', 'server.exe');
-    return { cmd: serverExe, args: [], useExe: true };
+    const indexHtml = path.join(process.resourcesPath, 'app', 'index.html');
+    return { cmd: serverExe, args: ['--index', indexHtml], useExe: true };
   } else {
-    // In dev: use system Python + server.py from repo root
-    const serverScript = path.join(__dirname, '..', 'server.py');
+    const serverScript = path.join(__dirname, 'discogs-cleaner', 'server.py');
+    const indexHtml = path.join(__dirname, 'discogs-cleaner', 'index.html');
     const python = process.platform === 'win32' ? 'python' : 'python3';
-    return { cmd: python, args: [serverScript], useExe: false };
+    return { cmd: python, args: [serverScript, '--index', indexHtml], useExe: false };
   }
 }
 

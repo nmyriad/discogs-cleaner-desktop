@@ -24,12 +24,13 @@
       {
         "provider": "github",
         "owner": "nmyriad",
-        "repo": "discogs-cleaner"
+        "repo": "discogs-cleaner-desktop"
       }
     ],
     "win": {
       "target": "nsis",
-      "icon": "assets/icon.ico"
+      "icon": "assets/icon.ico",
+      "requestedExecutionLevel": "asInvoker"
     },
     "nsis": {
       "oneClick": false,
@@ -39,16 +40,18 @@
     },
     "extraResources": [
       {
-        "from": "python/",
-        "to": "python/",
-        "filter": ["**/*"]
+        "from": "python/server.exe",
+        "to": "python/server.exe"
+      },
+      {
+        "from": "discogs-cleaner/index.html",
+        "to": "app/index.html"
       }
     ],
     "files": [
       "main.js",
       "preload.js",
-      "renderer/",
-      "assets/"
+      "assets/**/*"
     ]
   }
 }
