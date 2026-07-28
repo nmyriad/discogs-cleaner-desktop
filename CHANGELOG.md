@@ -2,6 +2,22 @@
 
 ---
 
+## v1.6.0 — web UI v1.7.0: result picker + parser fixes
+
+### New
+- **Result picker** — ambiguous Discogs matches now show a `⇄ N hits` button; pick the correct release from the top 5 (artwork, catno, label, year) before applying.
+
+### Fixed (via submodule bump to web UI v1.7.0)
+- `server.py` SyntaxError that broke rebuilds from source
+- Double-spaced catalog numbers (`[KLANG  01]`)
+- All-caps artist names (RZA, DJ, MF DOOM) being lowercased
+- Discogs `(2)` disambiguation suffixes leaking into folder names
+- Rate limit failures on 50+ folder batches (pre-emptive delay scaling)
+
+— nmyriad
+
+---
+
 ## v1.5.3 — quit fix
 
 ### Fixed
